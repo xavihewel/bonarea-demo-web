@@ -5,8 +5,11 @@
  */
 package com.ba.rrhh.bonarea.demo.web;
 
+import com.ba.rrhh.bonarea.demo.ConverterBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +20,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author xavier.verges
  */
 public class ConverterServlet extends HttpServlet {
+    
+    @EJB
+    private ConverterBean converterBean;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,6 +45,13 @@ public class ConverterServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ConverterServlet at " + request.getContextPath() + "</h1>");
+            
+            BigDecimal yenAmount = this.converterBean.dollarToYen(new BigDecimal("100.00"));
+            out.println("<h1>100$ are: " + yenAmount + " Y</h1>");
+            
+            BigDecimal euroAmount = this.converterBean.yenToEuro(new BigDecimal("100,00"));
+            out.println("<h1>100Y are: " + euroAmount + " €</h1>");
+            
             out.println("</body>");
             out.println("</html>");
         }
