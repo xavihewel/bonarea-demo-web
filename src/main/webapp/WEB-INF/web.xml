@@ -4,9 +4,25 @@
         <servlet-name>ConverterServlet</servlet-name>
         <servlet-class>com.ba.rrhh.bonarea.demo.web.ConverterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AutorServlet</servlet-name>
+        <servlet-class>com.ba.rrhh.bonarea.demo.web.AutorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AutorServletCorrect</servlet-name>
+        <servlet-class>com.ba.rrhh.bonarea.demo.web.AutorServletCorrect</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConverterServlet</servlet-name>
         <url-pattern>/ConverterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AutorServlet</servlet-name>
+        <url-pattern>/AutorServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AutorServletCorrect</servlet-name>
+        <url-pattern>/AutorServletCorrect</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
